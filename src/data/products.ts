@@ -5,6 +5,11 @@ import bermudaCargo from "@/assets/products/bermuda-cargo.jpg";
 import calcaJogger from "@/assets/products/calca-jogger.jpg";
 import boneSnapback from "@/assets/products/bone-snapback.jpg";
 import tenisUrban from "@/assets/products/tenis-urban.jpg";
+import camisetaEmporioArmani from "@/assets/products/camiseta-emporio-armani.jpg";
+import camisetaEmporioArmani2 from "@/assets/products/camiseta-emporio-armani-2.jpg";
+import camisetaEmporioArmani3 from "@/assets/products/camiseta-emporio-armani-3.jpg";
+import camisetaEmporioArmani4 from "@/assets/products/camiseta-emporio-armani-4.jpg";
+import camisetaEmporioArmaniCores from "@/assets/products/camiseta-emporio-armani-cores.jpg";
 
 export type Product = {
   id: string;
