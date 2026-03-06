@@ -10,6 +10,7 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [activeImage, setActiveImage] = useState(0);
 
   if (!product) {
     return (
@@ -30,6 +31,8 @@ const ProductDetail = () => {
     window.open(url, "_blank");
   };
 
+  const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
+
   return (
     <main className="pt-24 pb-16">
       <div className="container">
@@ -38,13 +41,30 @@ const ProductDetail = () => {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
-          {/* Image */}
-          <div className="aspect-square bg-secondary overflow-hidden">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
+          {/* Image Gallery */}
+          <div className="space-y-3">
+            <div className="aspect-square bg-secondary overflow-hidden">
+              <img
+                src={gallery[activeImage]}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {gallery.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {gallery.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImage(i)}
+                    className={`w-16 h-16 md:w-20 md:h-20 shrink-0 overflow-hidden border-2 transition-colors ${
+                      activeImage === i ? "border-accent" : "border-border hover:border-accent/50"
+                    }`}
+                  >
+                    <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Info */}

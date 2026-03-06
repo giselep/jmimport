@@ -5,6 +5,11 @@ import bermudaCargo from "@/assets/products/bermuda-cargo.jpg";
 import calcaJogger from "@/assets/products/calca-jogger.jpg";
 import boneSnapback from "@/assets/products/bone-snapback.jpg";
 import tenisUrban from "@/assets/products/tenis-urban.jpg";
+import camisetaEmporioArmani from "@/assets/products/camiseta-emporio-armani.jpg";
+import camisetaEmporioArmani2 from "@/assets/products/camiseta-emporio-armani-2.jpg";
+import camisetaEmporioArmani3 from "@/assets/products/camiseta-emporio-armani-3.jpg";
+import camisetaEmporioArmani4 from "@/assets/products/camiseta-emporio-armani-4.jpg";
+import camisetaEmporioArmaniCores from "@/assets/products/camiseta-emporio-armani-cores.jpg";
 
 export type Product = {
   id: string;
@@ -13,6 +18,7 @@ export type Product = {
   description: string;
   price: number;
   image: string;
+  gallery?: string[];
   category: string;
   colors: string[];
   sizes: string[];
@@ -105,6 +111,20 @@ export const products: Product[] = [
     category: "tenis",
     colors: ["Preto/Branco"],
     sizes: ["38", "39", "40", "41", "42", "43"],
+    isBestseller: true,
+  },
+  {
+    id: "camiseta-emporio-armani-ea7",
+    name: "Camiseta Emporio Armani EA7",
+    model: "Regular Fit",
+    description: "Camiseta Emporio Armani EA7 com estampa grande do logo icônico. Tecido premium de algodão com caimento perfeito. Peça sofisticada para quem busca estilo e qualidade.",
+    price: 189.90,
+    image: camisetaEmporioArmani,
+    gallery: [camisetaEmporioArmani, camisetaEmporioArmani2, camisetaEmporioArmani3, camisetaEmporioArmani4, camisetaEmporioArmaniCores],
+    category: "camisetas",
+    colors: ["Branco", "Preto", "Azul", "Vermelho", "Verde", "Amarelo", "Cinza", "Rosa", "Azul Claro"],
+    sizes: ["P", "M", "G", "GG"],
+    isNew: true,
     isBestseller: true,
   },
 ];
