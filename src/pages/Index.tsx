@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Truck } from "lucide-react";
 import heroImage from "@/assets/hero-model.jpg";
-import { products, categories, formatPrice } from "@/data/products";
+import { categories } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import ProductCard from "@/components/ProductCard";
 
 const Index = () => {
+  const { data: products = [], isLoading } = useProducts();
   const newProducts = products.filter((p) => p.isNew);
   const bestSellers = products.filter((p) => p.isBestseller);
 
@@ -57,9 +59,17 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {newProducts.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
+            {isLoading
+              ? Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="bg-card border border-border animate-pulse">
+                    <div className="aspect-square bg-secondary" />
+                    <div className="p-4 space-y-2">
+                      <div className="h-4 bg-secondary rounded w-3/4" />
+                      <div className="h-5 bg-secondary rounded w-1/3" />
+                    </div>
+                  </div>
+                ))
+              : newProducts.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
         </div>
       </section>
@@ -74,9 +84,17 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {bestSellers.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
+            {isLoading
+              ? Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="bg-card border border-border animate-pulse">
+                    <div className="aspect-square bg-secondary" />
+                    <div className="p-4 space-y-2">
+                      <div className="h-4 bg-secondary rounded w-3/4" />
+                      <div className="h-5 bg-secondary rounded w-1/3" />
+                    </div>
+                  </div>
+                ))
+              : bestSellers.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
         </div>
       </section>

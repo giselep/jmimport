@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { type Product, formatPrice } from "@/data/products";
+import { type Product, formatPrice, resolveImageUrl } from "@/data/products";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Link
-      to={`/produto/${product.id}`}
+      to={`/produto/${product.slug}`}
       className="group block bg-card border border-border overflow-hidden hover:border-accent/50 transition-all duration-300"
     >
       <div className="aspect-square overflow-hidden bg-secondary">
         <img
-          src={product.image}
+          src={resolveImageUrl(product.image)}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"

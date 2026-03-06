@@ -1,16 +1,35 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ShoppingBag } from "lucide-react";
-import { products, formatPrice, buildWhatsAppLink } from "@/data/products";
+import { formatPrice, buildWhatsAppLink, resolveImageUrl } from "@/data/products";
+import { useProduct } from "@/hooks/useProducts";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const product = products.find((p) => p.id === id);
+  const { data: product, isLoading } = useProduct(id);
 
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
+
+  if (isLoading) {
+    return (
+      <main className="pt-24 pb-16">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 animate-pulse">
+            <div className="aspect-square bg-secondary" />
+            <div className="space-y-4">
+              <div className="h-8 bg-secondary rounded w-3/4" />
+              <div className="h-6 bg-secondary rounded w-1/4" />
+              <div className="h-10 bg-secondary rounded w-1/3" />
+              <div className="h-20 bg-secondary rounded" />
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   if (!product) {
     return (
@@ -31,7 +50,7 @@ const ProductDetail = () => {
     window.open(url, "_blank");
   };
 
-  const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
+  const gallery = product.gallery.length > 0 ? product.gallery : [product.image];
 
   return (
     <main className="pt-24 pb-16">
@@ -45,7 +64,7 @@ const ProductDetail = () => {
           <div className="space-y-3">
             <div className="aspect-square bg-secondary overflow-hidden">
               <img
-                src={gallery[activeImage]}
+                src={resolveImageUrl(gallery[activeImage])}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -60,7 +79,7 @@ const ProductDetail = () => {
                       activeImage === i ? "border-accent" : "border-border hover:border-accent/50"
                     }`}
                   >
-                    <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
+                    <img src={resolveImageUrl(img)} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
