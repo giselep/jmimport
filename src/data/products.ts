@@ -113,6 +113,20 @@ export const products: Product[] = [
     sizes: ["38", "39", "40", "41", "42", "43"],
     isBestseller: true,
   },
+  {
+    id: "camiseta-emporio-armani-ea7",
+    name: "Camiseta Emporio Armani EA7",
+    model: "Regular Fit",
+    description: "Camiseta Emporio Armani EA7 com estampa grande do logo icônico. Tecido premium de algodão com caimento perfeito. Peça sofisticada para quem busca estilo e qualidade.",
+    price: 189.90,
+    image: camisetaEmporioArmani,
+    gallery: [camisetaEmporioArmani, camisetaEmporioArmani2, camisetaEmporioArmani3, camisetaEmporioArmani4, camisetaEmporioArmaniCores],
+    category: "camisetas",
+    colors: ["Branco", "Preto", "Azul", "Vermelho", "Verde", "Amarelo", "Cinza", "Rosa", "Azul Claro"],
+    sizes: ["P", "M", "G", "GG"],
+    isNew: true,
+    isBestseller: true,
+  },
 ];
 
 export const categories = [
