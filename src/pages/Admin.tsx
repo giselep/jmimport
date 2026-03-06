@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { products, categories, formatPrice, type Product } from "@/data/products";
-import { Lock, Package, Eye, Trash2, Plus, Copy, Check, LogOut } from "lucide-react";
+import { categories, formatPrice, resolveImageUrl, type Product } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
+import { Lock, Eye, Plus, Copy, Check, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -11,6 +12,7 @@ const Admin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
+  const { data: products = [], isLoading } = useProducts();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,17 +108,17 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {products.map((product) => (
-                  <ProductRow key={product.id} product={product} />
-                ))}
+                {isLoading ? (
+                  <tr><td colSpan={7} className="p-8 text-center text-muted-foreground">Carregando...</td></tr>
+                ) : (
+                  products.map((product) => (
+                    <ProductRow key={product.id} product={product} />
+                  ))
+                )}
               </tbody>
             </table>
           </div>
         </div>
-
-        <p className="text-muted-foreground text-xs text-center mt-6">
-          Para adicionar, editar ou remover produtos, use o formulário acima ou envie as informações pelo chat do Lovable.
-        </p>
       </div>
     </main>
   );
@@ -136,7 +138,7 @@ const ProductRow = ({ product }: { product: Product }) => {
     <tr className="border-b border-border last:border-0 hover:bg-secondary/30 transition-colors">
       <td className="p-4">
         <div className="flex items-center gap-3">
-          <img src={product.image} alt={product.name} className="w-12 h-12 object-cover bg-secondary shrink-0" />
+          <img src={resolveImageUrl(product.image)} alt={product.name} className="w-12 h-12 object-cover bg-secondary shrink-0" />
           <div>
             <p className="font-display text-sm tracking-wider text-foreground">{product.name}</p>
             <p className="text-muted-foreground text-xs">{product.model}</p>
@@ -159,7 +161,7 @@ const ProductRow = ({ product }: { product: Product }) => {
       </td>
       <td className="p-4">
         <Link
-          to={`/produto/${product.id}`}
+          to={`/produto/${product.slug}`}
           className="inline-flex items-center gap-1 text-muted-foreground hover:text-accent transition-colors text-xs"
         >
           <Eye className="w-4 h-4" />

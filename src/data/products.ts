@@ -13,121 +13,40 @@ import camisetaEmporioArmaniCores from "@/assets/products/camiseta-emporio-arman
 
 export type Product = {
   id: string;
+  slug: string;
   name: string;
   model: string;
   description: string;
   price: number;
   image: string;
-  gallery?: string[];
+  gallery: string[];
   category: string;
   colors: string[];
   sizes: string[];
-  isNew?: boolean;
-  isBestseller?: boolean;
+  isNew: boolean;
+  isBestseller: boolean;
 };
 
-export const products: Product[] = [
-  {
-    id: "camiseta-street-basic",
-    name: "Camiseta Street Basic",
-    model: "Oversized",
-    description: "Camiseta oversized em algodão premium. Corte amplo e confortável, perfeita para o dia a dia com estilo streetwear.",
-    price: 129.90,
-    image: camisetaStreetBasic,
-    category: "camisetas",
-    colors: ["Preto", "Branco", "Cinza"],
-    sizes: ["P", "M", "G", "GG"],
-    isNew: true,
-    isBestseller: true,
-  },
-  {
-    id: "camiseta-urban-graphic",
-    name: "Camiseta Urban Graphic",
-    model: "Oversized",
-    description: "Camiseta com estampa exclusiva urbana. Tecido de alta qualidade com caimento perfeito.",
-    price: 149.90,
-    image: camisetaUrbanWhite,
-    category: "camisetas",
-    colors: ["Branco", "Preto"],
-    sizes: ["P", "M", "G", "GG"],
-    isNew: true,
-  },
-  {
-    id: "camiseta-essential-gray",
-    name: "Camiseta Essential",
-    model: "Regular Fit",
-    description: "Camiseta básica essencial em algodão. Corte regular, ideal para composições minimalistas.",
-    price: 99.90,
-    image: camisetaGraphicGray,
-    category: "camisetas",
-    colors: ["Cinza", "Preto", "Branco"],
-    sizes: ["P", "M", "G", "GG"],
-    isBestseller: true,
-  },
-  {
-    id: "bermuda-cargo-street",
-    name: "Bermuda Cargo Street",
-    model: "Cargo",
-    description: "Bermuda cargo com bolsos laterais funcionais. Tecido resistente e confortável para o verão.",
-    price: 179.90,
-    image: bermudaCargo,
-    category: "bermudas",
-    colors: ["Preto", "Verde Militar", "Bege"],
-    sizes: ["P", "M", "G", "GG"],
-    isNew: true,
-    isBestseller: true,
-  },
-  {
-    id: "calca-jogger-premium",
-    name: "Calça Jogger Premium",
-    model: "Jogger",
-    description: "Calça jogger em moletom premium. Punho na barra e cintura elástica com cordão.",
-    price: 219.90,
-    image: calcaJogger,
-    category: "calcas",
-    colors: ["Preto", "Cinza"],
-    sizes: ["38", "40", "42", "44"],
-    isBestseller: true,
-  },
-  {
-    id: "bone-snapback-classic",
-    name: "Boné Snapback Classic",
-    model: "Snapback",
-    description: "Boné snapback com aba reta e ajuste traseiro. Design minimalista com logo bordado.",
-    price: 89.90,
-    image: boneSnapback,
-    category: "bones",
-    colors: ["Preto", "Branco"],
-    sizes: ["Único"],
-    isNew: true,
-  },
-  {
-    id: "tenis-urban-high",
-    name: "Tênis Urban High",
-    model: "High Top",
-    description: "Tênis cano alto estilo urbano. Solado emborrachado e design exclusivo streetwear.",
-    price: 349.90,
-    image: tenisUrban,
-    category: "tenis",
-    colors: ["Preto/Branco"],
-    sizes: ["38", "39", "40", "41", "42", "43"],
-    isBestseller: true,
-  },
-  {
-    id: "camiseta-emporio-armani-ea7",
-    name: "Camiseta Emporio Armani EA7",
-    model: "Regular Fit",
-    description: "Camiseta Emporio Armani EA7 com estampa grande do logo icônico. Tecido premium de algodão com caimento perfeito. Peça sofisticada para quem busca estilo e qualidade.",
-    price: 189.90,
-    image: camisetaEmporioArmani,
-    gallery: [camisetaEmporioArmani, camisetaEmporioArmani2, camisetaEmporioArmani3, camisetaEmporioArmani4, camisetaEmporioArmaniCores],
-    category: "camisetas",
-    colors: ["Branco", "Preto", "Azul", "Vermelho", "Verde", "Amarelo", "Cinza", "Rosa", "Azul Claro"],
-    sizes: ["P", "M", "G", "GG"],
-    isNew: true,
-    isBestseller: true,
-  },
-];
+// Map of static asset images for migrated products
+const staticImages: Record<string, string> = {
+  "/products/camiseta-street-basic.jpg": camisetaStreetBasic,
+  "/products/camiseta-urban-graphic.jpg": camisetaUrbanWhite,
+  "/products/camiseta-essential-gray.jpg": camisetaGraphicGray,
+  "/products/bermuda-cargo-street.jpg": bermudaCargo,
+  "/products/calca-jogger-premium.jpg": calcaJogger,
+  "/products/bone-snapback-classic.jpg": boneSnapback,
+  "/products/tenis-urban-high.jpg": tenisUrban,
+  "/products/camiseta-emporio-armani-ea7.jpg": camisetaEmporioArmani,
+  "/products/camiseta-emporio-armani-ea7-2.jpg": camisetaEmporioArmani2,
+  "/products/camiseta-emporio-armani-ea7-3.jpg": camisetaEmporioArmani3,
+  "/products/camiseta-emporio-armani-ea7-4.jpg": camisetaEmporioArmani4,
+  "/products/camiseta-emporio-armani-ea7-cores.jpg": camisetaEmporioArmaniCores,
+};
+
+/** Resolve image URL: static assets or remote URLs */
+export const resolveImageUrl = (url: string): string => {
+  return staticImages[url] || url;
+};
 
 export const categories = [
   { id: "camisetas", name: "Camisetas", emoji: "👕" },
