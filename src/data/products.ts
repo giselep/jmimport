@@ -18,6 +18,7 @@ export type Product = {
   description: string;
   price: number;
   image: string;
+  gallery?: string[];
   category: string;
   colors: string[];
   sizes: string[];
