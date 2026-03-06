@@ -146,7 +146,7 @@ const ProductRow = ({ product }: { product: Product }) => {
         </div>
       </td>
       <td className="p-4 text-muted-foreground hidden md:table-cell">{categoryName}</td>
-      <td className="p-4 font-display text-accent">{formatPrice(product.price)}</td>
+      <td className="p-4 font-display text-accent">{product.price > 0 ? formatPrice(product.price) : "—"}</td>
       <td className="p-4 text-muted-foreground text-xs hidden md:table-cell">{product.colors.join(", ")}</td>
       <td className="p-4 text-muted-foreground text-xs hidden md:table-cell">{product.sizes.join(", ")}</td>
       <td className="p-4 hidden sm:table-cell">

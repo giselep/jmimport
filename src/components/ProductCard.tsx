@@ -30,7 +30,9 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
         <h3 className="font-display text-sm tracking-wider text-foreground uppercase">{product.name}</h3>
         <p className="text-muted-foreground text-xs mt-1">{product.model}</p>
-        <p className="font-display text-lg text-accent mt-2">{formatPrice(product.price)}</p>
+        {product.price > 0 && (
+          <p className="font-display text-lg text-accent mt-2">{formatPrice(product.price)}</p>
+        )}
       </div>
     </Link>
   );

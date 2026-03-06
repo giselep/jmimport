@@ -99,7 +99,9 @@ const ProductDetail = () => {
 
             <h1 className="text-3xl md:text-4xl mb-1">{product.name}</h1>
             <p className="text-muted-foreground text-sm mb-4">{product.model}</p>
-            <p className="font-display text-3xl text-accent mb-6">{formatPrice(product.price)}</p>
+            {product.price > 0 && (
+              <p className="font-display text-3xl text-accent mb-6">{formatPrice(product.price)}</p>
+            )}
             <p className="text-muted-foreground text-sm leading-relaxed mb-8">{product.description}</p>
 
             {/* Colors */}
