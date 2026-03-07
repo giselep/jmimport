@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} LOJA STREETWEAR. Todos os direitos reservados.
+            © {new Date().getFullYear()} J&M IMPORTS. Todos os direitos reservados.
           </p>
         </div>
       </div>

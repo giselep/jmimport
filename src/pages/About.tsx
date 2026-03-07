@@ -10,7 +10,7 @@ const About = () => {
 
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            A LOJA STREETWEAR é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
+            A J&M IMPORTS é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
           </p>
           <p>
             Trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.
