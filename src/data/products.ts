@@ -69,5 +69,5 @@ export const buildWhatsAppLink = (product: Product, size: string, color: string,
     `Quantidade: ${quantity}\n\n` +
     `Pode confirmar disponibilidade?`
   );
-  return `https://wa.me/554196818448?text=${message}`;
+  return `https://wa.me/5541999939763?text=${message}`;
 };
