@@ -47,13 +47,13 @@ const Footer = () => {
             <h4 className="font-display text-sm tracking-widest mb-4 text-foreground">CONTATO</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="https://wa.me/554196818448"
+                href="https://wa.me/5541999939763"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground text-sm hover:text-accent transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                (41) 9681-8448
+                (41) 99993-9763
               </a>
               <div className="flex items-start gap-2 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />

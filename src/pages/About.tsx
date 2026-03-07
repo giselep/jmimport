@@ -44,12 +44,12 @@ const About = () => {
             <div>
               <h3 className="font-display text-sm tracking-widest uppercase mb-1">WhatsApp</h3>
               <a
-                href="https://wa.me/554196818448"
+                href="https://wa.me/5541999939763"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent text-sm hover:underline"
               >
-                (41) 9681-8448
+                (41) 99993-9763
               </a>
             </div>
           </div>
