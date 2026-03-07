@@ -20,15 +20,12 @@ const Index = () => {
         </div>
         <div className="relative container">
           <div className="max-w-xl">
-            <p className="font-display text-accent text-sm tracking-[0.3em] mb-4 uppercase animate-fade-in">
-              Desde 2016
-            </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl leading-[0.95] mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Estilo que representa sua{" "}
               <span className="text-accent">atitude</span>
             </h1>
             <p className="text-muted-foreground text-lg mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Vista LOJA DO JAO. Streetwear masculino com qualidade e personalidade.
+              Vista LOJA STREETWEAR. Streetwear masculino com qualidade e personalidade.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link

@@ -4,21 +4,16 @@ const About = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="container max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-6">
-          Loja do <span className="text-accent">Jao</span>
+        <h1 className="text-4xl md:text-5xl mb-8">
+          Loja <span className="text-accent">Streetwear</span>
         </h1>
-
-        <div className="flex items-center gap-2 text-accent mb-8">
-          <Calendar className="w-5 h-5" />
-          <span className="font-display tracking-widest uppercase text-sm">Desde 2016</span>
-        </div>
 
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            A LOJA DO JAO é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
+            A LOJA STREETWEAR é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
           </p>
           <p>
-            Desde 2016, trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.
+            Trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.
           </p>
           <p>
             Vendemos peças modernas para homens que gostam de estilo e atitude.
