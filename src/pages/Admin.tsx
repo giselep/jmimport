@@ -186,7 +186,7 @@ const AddProductHelper = ({ onClose }: { onClose: () => void }) => {
   });
 
   const generateTemplate = () => {
-    return `Adicione este produto na LOJA STREETWEAR:
+    return `Adicione este produto na J&M IMPORTS:
 
 Nome: ${form.name || "[nome do produto]"}
 Modelo: ${form.model || "[modelo]"}

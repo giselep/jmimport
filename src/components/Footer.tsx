@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="font-display text-xl tracking-widest mb-4">
-              LOJA <span className="text-accent">STREETWEAR</span>
+              J&M <span className="text-accent">IMPORTS</span>
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Estilo e atitude para jovens que gostam de se vestir bem.
@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} LOJA STREETWEAR. Todos os direitos reservados.
+            © {new Date().getFullYear()} J&M IMPORTS. Todos os direitos reservados.
           </p>
         </div>
       </div>

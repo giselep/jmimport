@@ -5,12 +5,12 @@ const About = () => {
     <main className="pt-24 pb-16">
       <div className="container max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-8">
-          Loja <span className="text-accent">Streetwear</span>
+          J&M <span className="text-accent">Imports</span>
         </h1>
 
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            A LOJA STREETWEAR é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
+            A J&M IMPORTS é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
           </p>
           <p>
             Trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.

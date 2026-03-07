@@ -61,7 +61,7 @@ export const formatPrice = (price: number) =>
 
 export const buildWhatsAppLink = (product: Product, size: string, color: string, quantity: number) => {
   const message = encodeURIComponent(
-    `Olá! Quero fazer um pedido na LOJA STREETWEAR.\n\n` +
+    `Olá! Quero fazer um pedido na J&M IMPORTS.\n\n` +
     `Produto: ${product.name}\n` +
     `Modelo: ${product.model}\n` +
     `Tamanho: ${size}\n` +
