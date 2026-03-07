@@ -51,6 +51,14 @@ const About = () => {
               >
                 (41) 99993-9763
               </a>
+              <a
+                href="https://wa.me/5541998131912"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent text-sm hover:underline"
+              >
+                (41) 99813-1912
+              </a>
             </div>
           </div>
         </div>

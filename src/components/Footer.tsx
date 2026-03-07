@@ -55,6 +55,15 @@ const Footer = () => {
                 <MessageCircle className="w-4 h-4" />
                 (41) 99993-9763
               </a>
+              <a
+                href="https://wa.me/5541998131912"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground text-sm hover:text-accent transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                (41) 99813-1912
+              </a>
               <div className="flex items-start gap-2 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                 <span>Paraná - Brasil</span>
