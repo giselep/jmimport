@@ -34,9 +34,7 @@ const About = () => {
             <div>
               <h3 className="font-display text-sm tracking-widest uppercase mb-1">Loja Física</h3>
               <p className="text-muted-foreground text-sm">
-                Dr. Motta Junior 1099<br />
-                São José dos Pinhais – PR<br />
-                CEP 83005-170
+                Paraná - Brasil
               </p>
             </div>
           </div>
