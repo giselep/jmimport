@@ -5,7 +5,7 @@ const About = () => {
     <main className="pt-24 pb-16">
       <div className="container max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-8">
-          Loja <span className="text-accent">Streetwear</span>
+          J&M <span className="text-accent">Imports</span>
         </h1>
 
         <div className="space-y-6 text-muted-foreground leading-relaxed">
