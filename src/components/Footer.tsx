@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="font-display text-xl tracking-widest mb-4">
-              LOJA DO <span className="text-accent">JAO</span>
+              LOJA <span className="text-accent">STREETWEAR</span>
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Desde 2016 trazendo estilo e atitude para jovens que gostam de se vestir bem.
