@@ -25,7 +25,7 @@ const Index = () => {
               <span className="text-accent">atitude</span>
             </h1>
             <p className="text-muted-foreground text-lg mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Vista LOJA DO JAO. Streetwear masculino com qualidade e personalidade.
+              Vista LOJA STREETWEAR. Streetwear masculino com qualidade e personalidade.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link

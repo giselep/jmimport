@@ -13,7 +13,7 @@ const About = () => {
             A LOJA STREETWEAR é uma loja de roupas masculinas com estilo jovem e urbano, focada em streetwear e moda casual masculina.
           </p>
           <p>
-            Desde 2016, trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.
+            Trazemos estilo e atitude para jovens que gostam de se vestir bem. Trabalhamos com roupas masculinas modernas, com qualidade e estilo streetwear.
           </p>
           <p>
             Vendemos peças modernas para homens que gostam de estilo e atitude.
