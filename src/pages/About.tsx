@@ -4,14 +4,9 @@ const About = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="container max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-6">
-          Loja do <span className="text-accent">Jao</span>
+        <h1 className="text-4xl md:text-5xl mb-8">
+          Loja <span className="text-accent">Streetwear</span>
         </h1>
-
-        <div className="flex items-center gap-2 text-accent mb-8">
-          <Calendar className="w-5 h-5" />
-          <span className="font-display tracking-widest uppercase text-sm">Desde 2016</span>
-        </div>
 
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
