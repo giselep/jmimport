@@ -57,7 +57,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-2 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>Dr. Motta Junior 1099, São José dos Pinhais – PR</span>
+                <span>Paraná - Brasil</span>
               </div>
               <div className="flex items-center gap-2 text-accent text-sm font-medium">
                 <Truck className="w-4 h-4" />
