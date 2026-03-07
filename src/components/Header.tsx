@@ -33,7 +33,7 @@ const Header = () => {
             </Link>
           ))}
           <a
-            href="https://wa.me/554196818448"
+            href="https://wa.me/5541999939763"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 font-display text-sm tracking-wider uppercase hover:opacity-90 transition-opacity"
