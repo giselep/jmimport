@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, MessageCircle, Truck } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-xl tracking-widest mb-4">
-              J&M <span className="text-accent">IMPORTS</span>
-            </h3>
+            <img src={logo} alt="J&M Imports" className="h-14 mb-2" />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Estilo e atitude para jovens que gostam de se vestir bem.
             </p>

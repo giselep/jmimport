@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +16,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="font-display text-2xl font-bold tracking-widest text-foreground">
-          J&M <span className="text-accent">IMPORTS</span>
+        <Link to="/">
+          <img src={logo} alt="J&M Imports" className="h-12" />
         </Link>
 
         {/* Desktop nav */}
