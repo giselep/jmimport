@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <img src={logo} alt="J&M Imports" className="h-28 mb-2" />
+            <img src={logo} alt="J&M Imports" className="h-20 mb-2 mix-blend-lighten" />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Estilo e atitude para jovens que gostam de se vestir bem.
             </p>
