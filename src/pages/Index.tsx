@@ -13,9 +13,9 @@ const Index = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="relative min-h-[600px] flex items-center py-32">
-        <div className="absolute inset-0 overflow-hidden">
-          <img src={heroImage} alt="Streetwear masculino" className="w-full h-full object-contain object-right-top" />
+      <section className="relative h-screen min-h-[700px] flex items-end pb-24">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Streetwear masculino" className="w-full h-full object-cover" style={{ objectPosition: 'center 15%' }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
         <div className="relative container">
