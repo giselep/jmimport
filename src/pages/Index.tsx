@@ -15,7 +15,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Streetwear masculino" className="w-full h-full object-cover" />
+          <img src={heroImage} alt="Streetwear masculino" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
         <div className="relative container">
