@@ -61,6 +61,31 @@ const About = () => {
               </a>
             </div>
           </div>
+
+          <div className="bg-card border border-border p-6 flex items-start gap-4">
+            <Instagram className="w-6 h-6 text-accent shrink-0 mt-1" />
+            <div>
+              <h3 className="font-display text-sm tracking-widest uppercase mb-1">Redes Sociais</h3>
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent text-sm hover:underline flex items-center gap-1"
+                >
+                  <Instagram className="w-4 h-4" /> Instagram
+                </a>
+                <a
+                  href="https://share.google/Sc7lPRNxXSHIeh2Oq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent text-sm hover:underline flex items-center gap-1"
+                >
+                  Google Meu Negócio
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
