@@ -34,7 +34,7 @@ const About = () => {
             <div>
               <h3 className="font-display text-sm tracking-widest uppercase mb-1">Loja Física</h3>
               <p className="text-muted-foreground text-sm">
-                Paraná - Brasil
+                R. Voluntários da Pátria, 640 - Centro, São José dos Pinhais - PR, 83005-020
               </p>
             </div>
           </div>
