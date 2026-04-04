@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, MessageCircle, Truck } from "lucide-react";
+import { MapPin, MessageCircle, Truck, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
