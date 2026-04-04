@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, Truck, Calendar } from "lucide-react";
+import { MapPin, MessageCircle, Truck, Instagram } from "lucide-react";
 
 const About = () => {
   return (
