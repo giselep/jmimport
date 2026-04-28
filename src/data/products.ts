@@ -48,6 +48,40 @@ export const resolveImageUrl = (url: string): string => {
   return staticImages[url] || url;
 };
 
+/**
+ * Optimize Supabase Storage images via the render/image transformation endpoint.
+ * Resizes + re-encodes (WebP when the browser supports it) to drastically reduce
+ * payload size on mobile. Non-Supabase URLs are returned unchanged.
+ */
+export const getOptimizedImageUrl = (
+  url: string,
+  options: { width?: number; quality?: number } = {}
+): string => {
+  const resolved = resolveImageUrl(url);
+  if (!resolved || typeof resolved !== "string") return resolved;
+  // Only transform Supabase Storage public URLs
+  if (!resolved.includes("/storage/v1/object/public/")) return resolved;
+
+  const { width = 600, quality = 70 } = options;
+  const transformed = resolved.replace(
+    "/storage/v1/object/public/",
+    "/storage/v1/render/image/public/"
+  );
+  const params = new URLSearchParams({
+    width: String(width),
+    quality: String(quality),
+    resize: "contain",
+  });
+  return `${transformed}?${params.toString()}`;
+};
+
+/** Build a srcSet for responsive images served from Supabase Storage. */
+export const getOptimizedSrcSet = (url: string, widths: number[] = [400, 600, 900, 1200]): string => {
+  return widths
+    .map((w) => `${getOptimizedImageUrl(url, { width: w })} ${w}w`)
+    .join(", ");
+};
+
 export const categories = [
   { id: "camisetas", name: "Camisetas", emoji: "👕" },
   { id: "bermudas", name: "Bermudas", emoji: "🩳" },
