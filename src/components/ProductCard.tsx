@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { type Product, formatPrice, resolveImageUrl } from "@/data/products";
+import { type Product, formatPrice, resolveImageUrl, getOptimizedImageUrl, getOptimizedSrcSet } from "@/data/products";
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const isRemote = product.image?.includes("/storage/v1/object/public/");
   return (
     <Link
       to={`/produto/${product.slug}`}
@@ -9,10 +10,13 @@ const ProductCard = ({ product }: { product: Product }) => {
     >
       <div className="aspect-square overflow-hidden bg-secondary">
         <img
-          src={resolveImageUrl(product.image)}
+          src={isRemote ? getOptimizedImageUrl(product.image, { width: 600 }) : resolveImageUrl(product.image)}
+          srcSet={isRemote ? getOptimizedSrcSet(product.image, [300, 500, 700]) : undefined}
+          sizes="(max-width: 768px) 50vw, 25vw"
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="p-4">
