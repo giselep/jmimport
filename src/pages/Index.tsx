@@ -15,7 +15,15 @@ const Index = () => {
       {/* Hero */}
       <section className="relative h-screen min-h-[700px] flex items-end pb-24 mt-20">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Streetwear masculino" className="w-full h-full object-cover object-top" />
+          <img
+            src={heroImage}
+            alt="Streetwear masculino"
+            className="w-full h-full object-cover object-top"
+            loading="eager"
+            // @ts-expect-error fetchpriority is a valid HTML attribute
+            fetchpriority="high"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
         <div className="relative container">
