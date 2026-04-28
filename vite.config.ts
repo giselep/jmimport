@@ -18,4 +18,21 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    target: "es2020",
+    cssCodeSplit: true,
+    minify: "esbuild",
+    sourcemap: false,
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        // Split heavy/shared deps into long-cacheable chunks so route bundles stay small.
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "query-vendor": ["@tanstack/react-query"],
+          "supabase-vendor": ["@supabase/supabase-js"],
+        },
+      },
+    },
+  },
 }));
