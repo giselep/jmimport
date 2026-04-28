@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ShoppingBag } from "lucide-react";
-import { formatPrice, buildWhatsAppLink, resolveImageUrl } from "@/data/products";
+import { formatPrice, buildWhatsAppLink, resolveImageUrl, getOptimizedImageUrl, getOptimizedSrcSet } from "@/data/products";
 import { useProduct } from "@/hooks/useProducts";
 
 const ProductDetail = () => {
@@ -63,25 +63,43 @@ const ProductDetail = () => {
           {/* Image Gallery */}
           <div className="space-y-3">
             <div className="aspect-square bg-secondary overflow-hidden">
-              <img
-                src={resolveImageUrl(gallery[activeImage])}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
+              {(() => {
+                const current = gallery[activeImage];
+                const isRemote = current?.includes("/storage/v1/object/public/");
+                return (
+                  <img
+                    src={isRemote ? getOptimizedImageUrl(current, { width: 1000 }) : resolveImageUrl(current)}
+                    srcSet={isRemote ? getOptimizedSrcSet(current, [600, 900, 1200]) : undefined}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                    decoding="async"
+                  />
+                );
+              })()}
             </div>
             {gallery.length > 1 && (
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {gallery.map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveImage(i)}
-                    className={`w-16 h-16 md:w-20 md:h-20 shrink-0 overflow-hidden border-2 transition-colors ${
-                      activeImage === i ? "border-accent" : "border-border hover:border-accent/50"
-                    }`}
-                  >
-                    <img src={resolveImageUrl(img)} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
-                  </button>
-                ))}
+                {gallery.map((img, i) => {
+                  const isRemote = img?.includes("/storage/v1/object/public/");
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImage(i)}
+                      className={`w-16 h-16 md:w-20 md:h-20 shrink-0 overflow-hidden border-2 transition-colors ${
+                        activeImage === i ? "border-accent" : "border-border hover:border-accent/50"
+                      }`}
+                    >
+                      <img
+                        src={isRemote ? getOptimizedImageUrl(img, { width: 160 }) : resolveImageUrl(img)}
+                        alt={`${product.name} ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>
